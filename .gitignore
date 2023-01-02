@@ -1,0 +1,8 @@
+*.asc
+binpkgs
+distfiles
+*.img
+*.iso
+.stamp-*
+sys-root
+*.tar.xz

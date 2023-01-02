@@ -1,0 +1,27 @@
+---
+version: '3.8'
+services:
+  gentoo:
+    build: .
+    command: make
+    cap_add:
+      - MKNOD
+      - SYS_ADMIN # mount
+      - SYS_PTRACE # build rust, libc
+    devices:
+      - /dev/loop-control:/dev/loop-control:rwm
+      - /dev/loop0:/dev/loop0:rwm
+      - /dev/loop1:/dev/loop1:rwm
+      - /dev/loop2:/dev/loop2:rwm
+    working_dir: /app
+    volumes_from:
+      - portage:ro
+    volumes:
+      - .:/app
+      - ./volumes/distfiles:/var/cache/distfiles
+      - ./volumes/binpkgs:/var/cache/binpkgs
+      - type: tmpfs
+        target: /var/tmp
+
+  portage:
+    image: gentoo/portage:latest

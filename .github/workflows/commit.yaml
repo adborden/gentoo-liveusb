@@ -1,0 +1,26 @@
+---
+name: commit
+
+on:
+  - push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      DOCKER_BUILDKIT: 1
+      COMPOSE_DOCKER_CLI_BUILD: 1
+    steps:
+      - uses: actions/checkout@v3
+      - run: nproc
+      - uses: isbang/compose-action@v1.4.1
+        with:
+          up-flags: --exit-code-from gentoo
+      - uses: actions/upload-artifact@v3
+        with:
+          name: outputs
+          path: |
+            kernel.tar.xz
+            modules.tar.xz
+            rootfs.tar.xz
+            gentoo-liveusb.iso

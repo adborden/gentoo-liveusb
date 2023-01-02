@@ -1,0 +1,4 @@
+*.img
+*.iso
+sys-root
+*.tar.xz

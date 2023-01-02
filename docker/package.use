@@ -1,0 +1,13 @@
+app-arch/brotli python
+app-crypt/gcr gtk
+dev-libs/libdbusmenu gtk3
+dev-qt/qtmultimedia widgets
+gnome-base/gvfs udisks
+media-gfx/zbar v4l
+media-libs/libglvnd X
+net-misc/electrum qrcode qt5
+sys-auth/pambase elogind -passwdqc
+sys-kernel/genkernel -firmware
+x11-libs/cairo X
+xfce-base/thunar udisks
+xfce-base/xfce4-meta minimal

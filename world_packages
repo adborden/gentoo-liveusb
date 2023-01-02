@@ -1,0 +1,5 @@
+app-admin/sudo
+app-crypt/gnupg
+app-editors/vim
+sys-fs/growpart
+xfce-base/xfce4-meta
