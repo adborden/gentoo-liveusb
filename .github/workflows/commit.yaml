@@ -15,6 +15,7 @@ jobs:
       - run: nproc
       - uses: isbang/compose-action@v1.4.1
         with:
+          compose-file: docker-compose.yaml
           up-flags: --exit-code-from gentoo
       - uses: actions/upload-artifact@v3
         with:
