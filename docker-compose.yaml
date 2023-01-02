@@ -20,8 +20,8 @@ services:
       - .:/app
       - ./volumes/distfiles:/var/cache/distfiles
       - ./volumes/binpkgs:/var/cache/binpkgs
-      - type: tmpfs
-        target: /var/tmp
+      #- type: tmpfs
+      #  target: /var/tmp
 
   portage:
     image: gentoo/portage:latest
